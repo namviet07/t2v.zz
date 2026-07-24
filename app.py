@@ -9,7 +9,7 @@ import edge_tts
 # ==========================================
 # 1. CẤU HÌNH TRANG & GIAO DIỆN GLASSMORPHISM
 # ==========================================
-st.set_page_config(page_title="Đọc Văn Bản", page_icon="🎙️", layout="centered")
+st.set_page_config(page_title="T2V - zZ", page_icon="🎙️", layout="centered")
 
 def load_css():
     st.markdown("""
