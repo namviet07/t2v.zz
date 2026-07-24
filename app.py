@@ -151,16 +151,16 @@ elif engine == "VieNeu-TTS":
         
 else:
     gtts_slow = st.checkbox("🐢 Đọc tốc độ chậm", value=False)
-    st.caption("Giọng chuẩn Google, dễ nghe nhưng không thể chọn vùng miền.")
+    st.caption("Giọng chuẩn của chị Google, dễ nghe nhưng không thể chọn vùng miền.")
 
 # Nút Xử lý
 if st.button("✨ TẠO GIỌNG ĐỌC", use_container_width=True):
     if not text_input.strip():
-        st.warning("⚠️ Vui lòng nhập nội dung cần đọc!")
+        st.warning("⚠️ Chưa có nội dung cần đọc!")
     elif len(text_input) > 5000:
         st.warning("⚠️ Văn bản quá dài (tối đa 5000 ký tự)!")
     else:
-        with st.spinner("Hệ thống đang tổng hợp âm thanh, vui lòng chờ trong giây lát..."):
+        with st.spinner("Chúng tui đang đọc chữ thành tiếng cho bạn, chờ chút nha..."):
             try:
                 audio_path = None
                 if engine == "Edge TTS":
