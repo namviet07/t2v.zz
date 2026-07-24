@@ -100,8 +100,8 @@ async def gen_edge(text, voice_id, speed):
 # ==========================================
 st.markdown('<div class="glass-container">', unsafe_allow_html=True)
 
-st.title("🎙️ Đọc Văn Bản")
-st.markdown("*Chuyển đổi văn bản thành giọng nói tốc độ cao.*")
+st.title("🎙️ T2V - zZ")
+st.markdown("*Ở đây có đọc chữ thành tiếng.*")
 
 text_input = st.text_area("📝 Nội dung cần đọc", height=150, placeholder="Nhập văn bản vào đây...")
 engine = st.radio("🗂️ Nguồn giọng đọc", ["Edge TTS", "VieNeu-TTS", "Google TTS"], horizontal=True)
