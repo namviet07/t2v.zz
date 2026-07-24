@@ -47,6 +47,14 @@ def load_css():
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 201, 255, 0.6) !important;
     }
+
+    /* =========================================
+       BỘ LỆNH ẨN GIAO DIỆN MẶC ĐỊNH CỦA STREAMLIT
+       ========================================= */
+    #MainMenu {visibility: hidden;} /* Ẩn menu 3 chấm góc phải */
+    footer {visibility: hidden;}    /* Ẩn dòng chữ Built with Streamlit */
+    header {visibility: hidden;}    /* Ẩn toàn bộ thanh header trên cùng */
+    .stDeployButton {display:none;} /* Ẩn nút Deploy (nếu có) */
     </style>
     """, unsafe_allow_html=True)
 
