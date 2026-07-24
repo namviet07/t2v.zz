@@ -49,12 +49,28 @@ def load_css():
     }
 
     /* =========================================
-       BỘ LỆNH ẨN GIAO DIỆN MẶC ĐỊNH CỦA STREAMLIT
+       "VŨ KHÍ HẠNG NẶNG" ĐỂ ẨN GIAO DIỆN THỪA
        ========================================= */
-    #MainMenu {visibility: hidden;} /* Ẩn menu 3 chấm góc phải */
-    footer {visibility: hidden;}    /* Ẩn dòng chữ Built with Streamlit */
-    header {visibility: hidden;}    /* Ẩn toàn bộ thanh header trên cùng */
-    .stDeployButton {display:none;} /* Ẩn nút Deploy (nếu có) */
+    /* Ẩn footer và logo Streamlit các phiên bản mới */
+    [data-testid="stFooter"] {display: none !important;}
+    .viewerBadge_container {display: none !important;}
+    .viewerBadge_link {display: none !important;}
+    footer {display: none !important; visibility: hidden !important;}
+    
+    /* Ẩn thanh công cụ, menu và header */
+    [data-testid="stHeader"] {display: none !important;}
+    [data-testid="stToolbar"] {display: none !important;}
+    #MainMenu {display: none !important;}
+    header {display: none !important; visibility: hidden !important;}
+    
+    /* Ẩn nút Fullscreen khi nhúng (Embed) */
+    button[title="View fullscreen"] {display: none !important;}
+    
+    /* Kéo giao diện lên bù vào khoảng trống của header/footer */
+    .stApp {
+        margin-top: -50px;
+        margin-bottom: -50px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
