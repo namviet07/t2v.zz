@@ -14,15 +14,16 @@ st.set_page_config(page_title="T2V - zZ", page_icon="🎙️", layout="centered"
 def load_css():
     st.markdown("""
     <style>
-    /* Hiệu ứng khung kính mờ (Glassmorphism) */
-    .glass-container {
+    /* Hiệu ứng khung kính mờ áp dụng thẳng vào khung mặc định của Streamlit */
+    .block-container {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-radius: 16px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 30px;
+        padding: 40px !important;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
         margin-bottom: 20px;
     }
     
@@ -48,29 +49,16 @@ def load_css():
         box-shadow: 0 6px 20px rgba(0, 201, 255, 0.6) !important;
     }
 
-    /* =========================================
-       "VŨ KHÍ HẠNG NẶNG" ĐỂ ẨN GIAO DIỆN THỪA
-       ========================================= */
-    /* Ẩn footer và logo Streamlit các phiên bản mới */
+    /* Ẩn các thành phần thừa (Logo, menu...) */
     [data-testid="stFooter"] {display: none !important;}
     .viewerBadge_container {display: none !important;}
     .viewerBadge_link {display: none !important;}
     footer {display: none !important; visibility: hidden !important;}
-    
-    /* Ẩn thanh công cụ, menu và header */
     [data-testid="stHeader"] {display: none !important;}
     [data-testid="stToolbar"] {display: none !important;}
     #MainMenu {display: none !important;}
     header {display: none !important; visibility: hidden !important;}
-    
-    /* Ẩn nút Fullscreen khi nhúng (Embed) */
     button[title="View fullscreen"] {display: none !important;}
-    
-    /* Kéo giao diện lên bù vào khoảng trống của header/footer */
-    .stApp {
-        margin-top: -50px;
-        margin-bottom: -50px;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -122,7 +110,7 @@ async def gen_edge(text, voice_id, speed):
 # ==========================================
 # 3. BỐ CỤC UI
 # ==========================================
-st.markdown('<div class="glass-container">', unsafe_allow_html=True)
+
 
 st.title("🎙️ T2V - zZ")
 st.markdown("*Ở đây có đọc chữ thành tiếng.*")
@@ -186,4 +174,4 @@ if st.button("✨ TẠO GIỌNG ĐỌC", use_container_width=True):
             except Exception as e:
                 st.error(f"Đã xảy ra lỗi: {str(e)}")
 
-st.markdown('</div>', unsafe_allow_html=True)
+
